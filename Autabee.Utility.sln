@@ -1,0 +1,83 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autabee.Utility.Logger.xUnit", "Autabee.Logger.xUnit\Autabee.Utility.Logger.xUnit.csproj", "{9AE791FC-BF28-4008-A28F-B2F0AFC7FA07}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autabee.Utility.Logger.Serilog", "Autabee.Logger.Serilog\Autabee.Utility.Logger.Serilog.csproj", "{D3064168-B1AE-473E-9C58-2C197419587F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autabee.Utility.Logger.Microsoft", "Autabee.Logger.Microsoft\Autabee.Utility.Logger.Microsoft.csproj", "{3186DC34-1344-443F-86A3-4FFF70DC9ECD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autabee.Utility.Logger", "Autabee.Logger\Autabee.Utility.Logger.csproj", "{0B84F2D2-935E-4AB9-9B4E-0715B4413D5D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autabee.Utility.IEC61131TypeConversion", "Autabee.IEC61131TypeConversion\Autabee.Utility.IEC61131TypeConversion.csproj", "{A87BBD13-7137-4328-B73C-C7BF0F9887AF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autabee.Utility.IEC61131TypeConversionTests", "Autabee.IEC61131TypeConversionTests\Autabee.Utility.IEC61131TypeConversionTests.csproj", "{410DD28E-5CBE-485F-B565-F637FD4D84CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logger", "Logger", "{D7205E81-39DA-4A69-B525-78BC56926E60}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Industial Automation", "Industial Automation", "{16C4F8FA-32CA-4503-B2F0-8D503B5AE2B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Messaging", "Messaging", "{C6FDDD73-2134-4069-92C1-24FC78883E0B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autabee.Utility.Messaging", "Autabee.Messaging\Autabee.Utility.Messaging.csproj", "{78A19BB8-9FF0-471F-AC22-EB797935E3BD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autabee.Utility.Validation", "Autabee.Messaging.Validation\Autabee.Utility.Validation.csproj", "{5E7BB515-0463-4DDD-ABAE-9A2499785C20}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9AE791FC-BF28-4008-A28F-B2F0AFC7FA07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AE791FC-BF28-4008-A28F-B2F0AFC7FA07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AE791FC-BF28-4008-A28F-B2F0AFC7FA07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AE791FC-BF28-4008-A28F-B2F0AFC7FA07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3064168-B1AE-473E-9C58-2C197419587F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3064168-B1AE-473E-9C58-2C197419587F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3064168-B1AE-473E-9C58-2C197419587F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3064168-B1AE-473E-9C58-2C197419587F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3186DC34-1344-443F-86A3-4FFF70DC9ECD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3186DC34-1344-443F-86A3-4FFF70DC9ECD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3186DC34-1344-443F-86A3-4FFF70DC9ECD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3186DC34-1344-443F-86A3-4FFF70DC9ECD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B84F2D2-935E-4AB9-9B4E-0715B4413D5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B84F2D2-935E-4AB9-9B4E-0715B4413D5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B84F2D2-935E-4AB9-9B4E-0715B4413D5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B84F2D2-935E-4AB9-9B4E-0715B4413D5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A87BBD13-7137-4328-B73C-C7BF0F9887AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A87BBD13-7137-4328-B73C-C7BF0F9887AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A87BBD13-7137-4328-B73C-C7BF0F9887AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A87BBD13-7137-4328-B73C-C7BF0F9887AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{410DD28E-5CBE-485F-B565-F637FD4D84CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{410DD28E-5CBE-485F-B565-F637FD4D84CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{410DD28E-5CBE-485F-B565-F637FD4D84CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{410DD28E-5CBE-485F-B565-F637FD4D84CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78A19BB8-9FF0-471F-AC22-EB797935E3BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78A19BB8-9FF0-471F-AC22-EB797935E3BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78A19BB8-9FF0-471F-AC22-EB797935E3BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78A19BB8-9FF0-471F-AC22-EB797935E3BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E7BB515-0463-4DDD-ABAE-9A2499785C20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E7BB515-0463-4DDD-ABAE-9A2499785C20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E7BB515-0463-4DDD-ABAE-9A2499785C20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E7BB515-0463-4DDD-ABAE-9A2499785C20}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9AE791FC-BF28-4008-A28F-B2F0AFC7FA07} = {D7205E81-39DA-4A69-B525-78BC56926E60}
+		{D3064168-B1AE-473E-9C58-2C197419587F} = {D7205E81-39DA-4A69-B525-78BC56926E60}
+		{3186DC34-1344-443F-86A3-4FFF70DC9ECD} = {D7205E81-39DA-4A69-B525-78BC56926E60}
+		{0B84F2D2-935E-4AB9-9B4E-0715B4413D5D} = {D7205E81-39DA-4A69-B525-78BC56926E60}
+		{A87BBD13-7137-4328-B73C-C7BF0F9887AF} = {16C4F8FA-32CA-4503-B2F0-8D503B5AE2B3}
+		{410DD28E-5CBE-485F-B565-F637FD4D84CE} = {16C4F8FA-32CA-4503-B2F0-8D503B5AE2B3}
+		{78A19BB8-9FF0-471F-AC22-EB797935E3BD} = {C6FDDD73-2134-4069-92C1-24FC78883E0B}
+		{5E7BB515-0463-4DDD-ABAE-9A2499785C20} = {C6FDDD73-2134-4069-92C1-24FC78883E0B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E12A0DD2-11AF-4CC7-A2EF-9B5864E5AE20}
+	EndGlobalSection
+EndGlobal

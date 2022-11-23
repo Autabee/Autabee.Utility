@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.0;net48;net6.0</TargetFrameworks>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="readme.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="xunit.abstractions" Version="2.0.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Autabee.Logger\Autabee.Utility.Logger.csproj" />
+	</ItemGroup>
+
+</Project>
