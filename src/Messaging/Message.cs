@@ -4,7 +4,11 @@ using System.Runtime.Serialization;
 
 namespace Autabee.Utility
 {
-    public class Message 
+#if NET5_0_OR_GREATER
+    public record Message
+#else
+    public class Message
+#endif
     {
         public Message()
         {
@@ -18,7 +22,6 @@ namespace Autabee.Utility
                 : new MessageCode(messageCode);
             MessageTime = DateTime.UtcNow;
             Parameters = parameters;
-            messageText.GetHashCode();
         }
 
         public Message(MessageCode messageCode, string messageText, params string[] parameters)
@@ -27,13 +30,33 @@ namespace Autabee.Utility
             MessageCode = messageCode;
             MessageTime = DateTime.UtcNow;
             Parameters = parameters;
-            messageText.GetHashCode();
         }
 
-        public string MessageText { get; private set; }
-        public MessageCode MessageCode { get; init; }
-        public string[] Parameters { get; init; }
-        public DateTime MessageTime { get; init; }
+        public string MessageText { 
+            get; 
+            private set; 
+        }
+        public MessageCode MessageCode { get;
+#if NET5_0_OR_GREATER
+            init; 
+#else 
+            private set;
+#endif
+        }
+        public string[] Parameters { get;
+#if NET5_0_OR_GREATER
+            init; 
+#else
+            private set;
+#endif
+        }
+        public DateTime MessageTime { get;
+#if NET5_0_OR_GREATER
+            init; 
+#else 
+            private set;
+#endif
+        }
 
         public override string ToString()
         {

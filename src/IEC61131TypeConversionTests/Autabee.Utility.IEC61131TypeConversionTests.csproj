@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Autabee.IEC61131TypeConversion\Autabee.Utility.IEC61131TypeConversion.csproj" />
+    <ProjectReference Include="..\IEC61131TypeConversion\Autabee.Utility.IEC61131TypeConversion.csproj" />
   </ItemGroup>
 
 </Project>

@@ -21,7 +21,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Autabee.Logger\Autabee.Utility.Logger.csproj" />
+		<ProjectReference Include="..\Logger\Autabee.Utility.Logger.csproj" />
 	</ItemGroup>
 
 </Project>
