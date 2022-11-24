@@ -6,6 +6,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<None Include="..\..\autabee.png" Link="autabee.png">
+		  <PackagePath>\</PackagePath>
+		  <Pack>True</Pack>
+		</None>
 		<None Include="readme.md">
 			<Pack>True</Pack>
 			<PackagePath>\</PackagePath>
