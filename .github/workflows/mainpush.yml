@@ -28,6 +28,6 @@ jobs:
       uses: tedd/publish-nuget-neo@v1.0.2
       with:
           NUGET_KEY: ${{secrets.NUGET_KEY}}
-          # VERSION_FILE_PATH: common.props
+          VERSION_FILE_PATH: common.props
           INCLUDE_SYMBOLS: true
           NO_BUILD: true
