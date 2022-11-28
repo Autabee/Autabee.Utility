@@ -31,9 +31,9 @@ jobs:
     - name: Publish to NuGet
       continue-on-error: true
       uses: alirezanet/publish-nuget@v3.0.4
-        with:
-            PROJECT_FILE_PATH: src/logger/Autabee.Utility.Logger.csproj
-            NUGET_KEY: ${{secrets.NUGET_KEY}}
-            VERSION_FILE_PATH: common.props
-            INCLUDE_SYMBOLS: true
-            NO_BUILD: true
+      with:
+          PROJECT_FILE_PATH: src/Logger.xUnit/Autabee.Utility.Logger.xUnit.csproj
+          NUGET_KEY: ${{secrets.NUGET_KEY}}
+          VERSION_FILE_PATH: common.props
+          INCLUDE_SYMBOLS: true
+          NO_BUILD: true
