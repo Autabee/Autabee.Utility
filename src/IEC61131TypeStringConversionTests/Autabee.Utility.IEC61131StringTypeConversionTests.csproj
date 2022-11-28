@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net6.0;net48</TargetFrameworks>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
@@ -15,7 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\IEC61131TypeConversion\Autabee.Utility.IEC61131TypeConversion.csproj" />
+    <ProjectReference Include="..\IEC61131TypeStringConversion\Autabee.Utility.IEC61131StringTypeConversion.csproj" />
   </ItemGroup>
+
 
 </Project>
