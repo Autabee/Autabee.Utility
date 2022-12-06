@@ -1,5 +1,4 @@
-﻿using Autabee.Utility.Logger;
-using System;
+﻿using System;
 using Xunit.Abstractions;
 
 namespace Autabee.Utility.Logger.xUnit

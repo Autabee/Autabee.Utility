@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Linq;
 
-namespace Autabee.Utility.IEC61131TypeConversion
+namespace Autabee.Utility.IEC61131StringTypeConversion
 {
     public static class IecTypeConvertor
     {

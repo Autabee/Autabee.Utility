@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace Autabee.Utility
+namespace Autabee.Utility.Messaging
 {
     /// <summary>
     /// Default message filters
@@ -14,18 +14,18 @@ namespace Autabee.Utility
             | MessageLevels.Warning 
             | MessageLevels.Error 
             | MessageLevels.Fatal,
-        DebugAndLower = 
+        DebugAndLower =
             MessageLevels.Debug 
             | MessageLevels.Info 
             | MessageLevels.Warning 
             | MessageLevels.Error 
             | MessageLevels.Fatal,
-        InfoAndLower = 
+        InfoAndLower =
             MessageLevels.Info 
             | MessageLevels.Warning 
             | MessageLevels.Error 
             | MessageLevels.Fatal,
-        WarningAndLower = 
+        WarningAndLower =
             MessageLevels.Warning 
             | MessageLevels.Error 
             | MessageLevels.Fatal,

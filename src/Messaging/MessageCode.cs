@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 
-namespace Autabee.Utility
+namespace Autabee.Utility.Messaging
 {
     public struct MessageCode
     {
@@ -10,16 +11,17 @@ namespace Autabee.Utility
         }
 
         public ulong Code { get; }
-
-        public MessageLevels Level()
-        {
-            return (MessageLevels)(Code & 0x7F00_0000_0000_0000);
-        }
-
-        public int MessageHash()
-        {
-            return Convert.ToInt32(Code & 0xFFFF_FFFF);
-        }
     }
 
+    public static class MessageCodeExtension {
+        public static  MessageLevels Level(this MessageCode code)
+        {
+            return (MessageLevels)(code.Code & 0x7F00_0000_0000_0000);
+        }
+
+        public static int MessageHash(this MessageCode code)
+        {
+            return Convert.ToInt32(code.Code & 0xFFFF_FFFF);
+        }
+    }
 }

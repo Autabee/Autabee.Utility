@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Autabee.Utility.Messaging;
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 
 namespace Autabee.Utility
@@ -10,19 +12,20 @@ namespace Autabee.Utility
     public class ValidationResult
 #endif
     {
+        
         public ValidationResult(bool success = true, string unSuccessfulText = "", params object[] formatObjects)
         {
             this.Success = success;
-            FailInfo = new List<(string, object[])>();
+            FailInfo = new List<Message>();
             if (!string.IsNullOrWhiteSpace(unSuccessfulText))
             {
-                FailInfo.Add((unSuccessfulText, formatObjects));
+                FailInfo.Add(new Message(0,unSuccessfulText, formatObjects));
             }
         }
-        public ValidationResult(bool success = true, List<(string, object[])> failInfo = default)
+        public ValidationResult(bool success = true, List<Message> failInfo = default)
         {
             this.Success = success;
-            this.FailInfo = failInfo ?? new List<(string, object[])>();
+            this.FailInfo = failInfo ?? new List<Message>();
         }
 
         public void AddResult(ValidationResult validationResult)
@@ -38,16 +41,22 @@ namespace Autabee.Utility
             Success &= succes;
             if (!string.IsNullOrWhiteSpace(failText))
             {
-                FailInfo.Add((failText, formatObjects));
+                FailInfo.Add(new Message(0,failText, formatObjects));
             }
         }
         public string FailString()
         {
-            string failString = FailInfo.Aggregate("", (accumulator, fail) => accumulator += string.Format(fail.Item1, fail.Item2) + Environment.NewLine);
+            string failString = FailInfo.Aggregate("", (accumulator, fail) => accumulator += fail.ToString() + Environment.NewLine);
             return failString;
         }
 
-        public List<(string, object[])> FailInfo { get; }
+        public string FailString(CultureInfo culture)
+        {
+            string failString = FailInfo.Aggregate("", (accumulator, fail) => accumulator += fail.ToString() + Environment.NewLine);
+            return failString;
+        }
+
+        public List<Message> FailInfo { get; }
 
         public bool Success { get; private set; }
     }

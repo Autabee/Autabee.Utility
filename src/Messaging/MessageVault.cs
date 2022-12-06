@@ -5,7 +5,7 @@ using System.Linq;
 using System.Net.Security;
 using System.Runtime.CompilerServices;
 
-namespace Autabee.Utility
+namespace Autabee.Utility.Messaging
 {
 
     public static class MessageVault

@@ -1,5 +1,4 @@
-﻿using Autabee.Utility.Logger;
-using Serilog;
+﻿using Serilog;
 using System;
 
 namespace Autabee.Utility.Logger.Serilog

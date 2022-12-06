@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Autabee.Utility
+namespace Autabee.Utility.Messaging.Validation
 {
 #if(NET6_0_OR_GREATER)
     public record ValidationResult<T> : ValidationResult

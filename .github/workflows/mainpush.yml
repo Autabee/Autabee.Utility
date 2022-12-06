@@ -19,7 +19,7 @@ jobs:
       run: dotnet build ./src --configuration Release --no-restore
     - name: Test
       run: dotnet test --configuration Release --no-build --verbosity normal ./src
-    - name: Publish to NuGet
+    - name: Publish Logger to NuGet 
       continue-on-error: true
       uses: alirezanet/publish-nuget@v3.0.4
       with:
@@ -28,12 +28,57 @@ jobs:
           VERSION_FILE_PATH: common.props
           INCLUDE_SYMBOLS: true
           NO_BUILD: true
-    - name: Publish to NuGet
+    - name: Publish Logger.xUnit to NuGet
       continue-on-error: true
       uses: alirezanet/publish-nuget@v3.0.4
       with:
           PROJECT_FILE_PATH: src/Logger.xUnit/Autabee.Utility.Logger.xUnit.csproj
           NUGET_KEY: ${{secrets.NUGET_KEY}}
-          VERSION_FILE_PATH: common.props
+          VERSION_FILE_PATH: src/Logger.xUnit/Autabee.Utility.Logger.xUnit.csproj
+          INCLUDE_SYMBOLS: true
+          NO_BUILD: true
+    - name: Publish Logger.Microsoft to NuGet
+      continue-on-error: true
+      uses: alirezanet/publish-nuget@v3.0.4
+      with:
+          PROJECT_FILE_PATH: src/Logger.Microsoft/Autabee.Utility.Logger.Microsoft.csproj
+          NUGET_KEY: ${{secrets.NUGET_KEY}}
+          VERSION_FILE_PATH: src/Logger.Microsoft/Autabee.Utility.Logger.Microsoft.csproj
+          INCLUDE_SYMBOLS: true
+          NO_BUILD: true
+    - name: Publish Logger.Serilog to NuGet
+      continue-on-error: true
+      uses: alirezanet/publish-nuget@v3.0.4
+      with:
+          PROJECT_FILE_PATH: src/Logger.Microsoft/Autabee.Utility.Logger.Serilog.csproj
+          NUGET_KEY: ${{secrets.NUGET_KEY}}
+          VERSION_FILE_PATH: src/Logger.Microsoft/Autabee.Utility.Logger.Serilog.csproj
+          INCLUDE_SYMBOLS: true
+          NO_BUILD: true
+    - name: Publish IEC61131StringTypeConversion to NuGet
+      continue-on-error: true
+      uses: alirezanet/publish-nuget@v3.0.4
+      with:
+          PROJECT_FILE_PATH: src/IEC61131TypeStringConversion/Autabee.Utility.IEC61131StringTypeConversion.csproj
+          NUGET_KEY: ${{secrets.NUGET_KEY}}
+          VERSION_FILE_PATH: src/IEC61131TypeStringConversion/Autabee.Utility.IEC61131StringTypeConversion.csproj
+          INCLUDE_SYMBOLS: true
+          NO_BUILD: true
+    - name: Publish Messaging to NuGet
+      continue-on-error: true
+      uses: alirezanet/publish-nuget@v3.0.4
+      with:
+          PROJECT_FILE_PATH: src/Messaging/Autabee.Utility.Messaging.csproj
+          NUGET_KEY: ${{secrets.NUGET_KEY}}
+          VERSION_FILE_PATH: src/Messaging/Autabee.Utility.Messaging.csproj
+          INCLUDE_SYMBOLS: true
+          NO_BUILD: true
+    - name: Publish Messaging to NuGet
+      continue-on-error: true
+      uses: alirezanet/publish-nuget@v3.0.4
+      with:
+          PROJECT_FILE_PATH: src/Messaging.Validation/Autabee.Utility.Messaging.Validation.csproj
+          NUGET_KEY: ${{secrets.NUGET_KEY}}
+          VERSION_FILE_PATH: src/Messaging.Validation/Autabee.Utility.Messaging.Validation.csproj
           INCLUDE_SYMBOLS: true
           NO_BUILD: true

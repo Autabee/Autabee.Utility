@@ -5,10 +5,10 @@ using System.Text;
 using System.Collections;
 using System.Linq;
 using Xunit.Abstractions;
-using Autabee.Utility.IEC61131TypeConversion;
-using Autabee.Utility.IEC61131TypeConversionTests.TestObjects;
+using Autabee.Utility.IEC61131StringTypeConversion;
+using Autabee.Utility.IEC61131StringTypeConversionTests.TestObjects;
 
-namespace Autabee.Utility.IEC61131TypeConversionTests
+namespace Autabee.Utility.IEC61131StringTypeConversionTests
 {
     public class IecTypeConvertorTests
     {

@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace Autabee.Utility.IEC61131TypeConversion
+namespace Autabee.Utility.IEC61131StringTypeConversion
 {
     public static class IECType
     {

@@ -1,4 +1,4 @@
-﻿namespace Autabee.Utility.IEC61131TypeConversionTests.TestObjects
+﻿namespace Autabee.Utility.IEC61131StringTypeConversionTests.TestObjects
 {
     class Address
     {

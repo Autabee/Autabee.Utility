@@ -1,5 +1,4 @@
-﻿using Autabee.Utility.Logger;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using System;
 
 namespace Autabee.Utility.Logger.Microsoft

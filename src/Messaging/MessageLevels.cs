@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace Autabee.Utility
+namespace Autabee.Utility.Messaging
 {
     /// <summary>
     /// Default message levels

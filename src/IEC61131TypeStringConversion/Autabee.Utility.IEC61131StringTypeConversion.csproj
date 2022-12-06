@@ -1,10 +1,19 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+	<Import Project="..\..\common.props" />
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.0;net6.0;net48</TargetFrameworks>
-		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<TargetFrameworks>netstandard2.0;net48;net6.0</TargetFrameworks>
+		<Description>Standard logging interface for autabee packages</Description>
+		<PackageProjectUrl>https://github.com/Autabee/Autabee.Utility/tree/main/src/IEC61131TypeStringConversion</PackageProjectUrl>
+    	<PackageTags>logging</PackageTags>
+		<Version>1.0.0</Version>
 	</PropertyGroup>
 	<ItemGroup>
+		<None Include="..\..\autabee.png">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
+		</None>
 		<None Include="readme.md">
 			<Pack>True</Pack>
 			<PackagePath>\</PackagePath>
