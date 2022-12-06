@@ -15,7 +15,7 @@ namespace Autabee.Utility.Messaging.Validation
             this.Object = Object;
         }
 
-        public ValidationResult(bool success = true, T Object = default, List<(string, object[])> failInfo = default) : base(success, failInfo)
+        public ValidationResult(bool success = true, T Object = default, List<Message> failInfo = default) : base(success, failInfo)
         {
             this.Object = Object;
         }

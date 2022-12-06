@@ -25,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autabee.Utility.IEC61131Str
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autabee.Utility.IEC61131StringTypeConversionTests", "IEC61131TypeStringConversionTests\Autabee.Utility.IEC61131StringTypeConversionTests.csproj", "{7C0484B6-74E1-4B51-ACE9-036F9C5A74E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autabee.Utility.MessagingTests", "Autabee.Utility.MessagingTests\Autabee.Utility.MessagingTests.csproj", "{91F26DB9-DB71-43DC-9AE1-D38DC4DDECF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autabee.Utility.MessagingTests", "Autabee.Utility.MessagingTests\Autabee.Utility.MessagingTests.csproj", "{91F26DB9-DB71-43DC-9AE1-D38DC4DDECF1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -82,6 +82,7 @@ Global
 		{5E7BB515-0463-4DDD-ABAE-9A2499785C20} = {C6FDDD73-2134-4069-92C1-24FC78883E0B}
 		{2691EB88-0050-4815-B1C7-04CBACCD853E} = {16C4F8FA-32CA-4503-B2F0-8D503B5AE2B3}
 		{7C0484B6-74E1-4B51-ACE9-036F9C5A74E8} = {16C4F8FA-32CA-4503-B2F0-8D503B5AE2B3}
+		{91F26DB9-DB71-43DC-9AE1-D38DC4DDECF1} = {C6FDDD73-2134-4069-92C1-24FC78883E0B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E12A0DD2-11AF-4CC7-A2EF-9B5864E5AE20}
