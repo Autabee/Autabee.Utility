@@ -75,7 +75,7 @@ namespace Autabee.Utility.IEC61131StringTypeConversionTests
         {
             Guid guid = new Guid();
             var person = new Person() { Name = guid.ToString(), PasswordHash = guid.GetHashCode() };
-            Assert.Equal("UDT_Autabee_Utility_IEC61131TypeConversionTests_TestObjects_Person", person.GetIecTypeString());
+            Assert.Equal("UDT_Autabee_Utility_IEC61131StringTypeConversionTests_TestObjects_Person", person.GetIecTypeString());
         }
 
 
