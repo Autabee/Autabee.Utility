@@ -1,4 +1,6 @@
-﻿using Serilog;
+﻿using Autabee.Utility.Messaging;
+using Serilog;
+using Serilog.Events;
 using System;
 
 namespace Autabee.Utility.Logger.Serilog
@@ -12,52 +14,57 @@ namespace Autabee.Utility.Logger.Serilog
             this.logger = logger;
         }
 
-        public void Error(string message, Exception e = null, params object[] values)
+        public void Error(string message, params object[] values)
+            => logger.Error(message, values);
+
+        public void Error(string message, Exception e, params object[] values)
+            => logger.Error(e, message, values);
+
+        public void Fatal(string message, params object[] values)
+            => logger.Fatal(message, values);
+
+        public void Fatal(string message, Exception e, params object[] values)
+            => logger.Fatal(e, message, values);
+
+        public void Information(string message, params object[] values)
+            => logger.Information(message, values);
+
+        public void Information(string message, Exception e, params object[] values)
+            => logger.Information(e, message, values);
+
+
+        LogEventLevel MessageLevelToLogEventLevel(MessageLevel level)
         {
-            if (e == null)
+            switch (level)
             {
-                logger.Error(message, values);
+                case MessageLevel.Debug:
+                    return LogEventLevel.Debug;
+                case MessageLevel.Error:
+                    return LogEventLevel.Error;
+                case MessageLevel.Fatal:
+                    return LogEventLevel.Fatal;
+                case MessageLevel.Info:
+                    return LogEventLevel.Information;
+                case MessageLevel.Warning:
+                    return LogEventLevel.Warning;
+                default:
+                    return LogEventLevel.Verbose;
             }
-            else
-            {
-                logger.Error(e, message, values);
-            }
+        }
+        public void Log(Message message)
+        {
+            logger.Write(MessageLevelToLogEventLevel(message.Level), message.ToString());
         }
 
-        public void Fatal(string message, Exception e = null, params object[] values)
+        public void Log(Message message, Exception e)
         {
-            if (e == null)
-            {
-                logger.Fatal(message, values);
-            }
-            else
-            {
-                logger.Fatal(e, message, values);
-            }
+            throw new NotImplementedException();
         }
 
-        public void Information(string message, Exception e = null, params object[] values)
-        {
-            if (e == null)
-            {
-                logger.Information(message, values);
-            }
-            else
-            {
-                logger.Information(e, message, values);
-            }
-        }
+        public void Warning(string message, params object[] values)
+            => logger.Warning(message, values);
+        public void Warning(string message, Exception e, params object[] values)
+            => logger.Warning(e, message, values);
 
-        public void Warning(string message, Exception e = null, params object[] values)
-        {
-            if (e == null)
-            {
-                logger.Warning(message, values);
-            }
-            else
-            {
-                logger.Warning(e, message, values);
-            }
-        }
     }
 }

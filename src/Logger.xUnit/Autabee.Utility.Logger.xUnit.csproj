@@ -7,7 +7,7 @@
 		<Description>Simple Implementation for outputting to xunit.</Description>
 		<PackageProjectUrl>https://github.com/Autabee/Autabee.Utility/tree/main/src/Logger.xUnit</PackageProjectUrl>
     	<PackageTags>logging</PackageTags>
-		<Version>1.0.0</Version>
+		<Version>1.0.1</Version>
 	</PropertyGroup>
 	<ItemGroup>
 		<None Include="..\..\autabee.png">
@@ -26,6 +26,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\Logger\Autabee.Utility.Logger.csproj" />
+		<ProjectReference Include="..\Messaging\Autabee.Utility.Messaging.csproj" />
 	</ItemGroup>
 
 </Project>

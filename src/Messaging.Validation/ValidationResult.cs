@@ -12,7 +12,6 @@ namespace Autabee.Utility
     public class ValidationResult
 #endif
     {
-        
         public ValidationResult(bool success = true, string unSuccessfulText = "", params object[] formatObjects)
         {
             this.Success = success;
@@ -44,13 +43,7 @@ namespace Autabee.Utility
                 FailInfo.Add(new Message(0,failText, formatObjects));
             }
         }
-        public string FailString()
-        {
-            string failString = FailInfo.Aggregate("", (accumulator, fail) => accumulator += fail.ToString() + Environment.NewLine);
-            return failString;
-        }
-
-        public string FailString(CultureInfo culture)
+        public override string ToString()
         {
             string failString = FailInfo.Aggregate("", (accumulator, fail) => accumulator += fail.ToString() + Environment.NewLine);
             return failString;

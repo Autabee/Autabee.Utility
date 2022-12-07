@@ -13,46 +13,43 @@ namespace Autabee.Utility.Messaging
     {
         public Message()
         {
-            
+
         }
 
-        public Message(ulong messageCode = 0, string messageText="",  params object[] parameters)
+        public Message(MessageLevel level = MessageLevel.None, string text = "", params object[] parameters)
         {
-            MessageText = messageText ?? string.Empty;
-            MessageCode = messageCode == 0
-                ? new MessageCode(Convert.ToUInt64(messageText.GetHashCode())) 
-                : new MessageCode(messageCode);
-            MessageTime = DateTime.UtcNow;
+            Text = text ?? string.Empty;
+            Level = level;
+            Time = DateTime.UtcNow;
             Parameters = parameters.Select(o => o.ToString()).ToArray();
         }
 
-        public Message(MessageCode messageCode, string messageText, params object[] parameters)
+        public string Text
         {
-            MessageText = messageText ?? string.Empty;
-            MessageCode = messageCode;
-            MessageTime = DateTime.UtcNow;
-            Parameters = parameters.Select(o => o.ToString()).ToArray();
+            get;
+            private set;
         }
-
-        public string MessageText { 
-            get; 
-            private set; 
-        }
-        public MessageCode MessageCode { get;
+        public MessageLevel Level
+        {
+            get;
 #if NET5_0_OR_GREATER
             init; 
 #else 
             private set;
 #endif
         }
-        public string[] Parameters { get;
+        public string[] Parameters
+        {
+            get;
 #if NET5_0_OR_GREATER
             init; 
 #else
             private set;
 #endif
         }
-        public DateTime MessageTime { get;
+        public DateTime Time
+        {
+            get;
 #if NET5_0_OR_GREATER
             init; 
 #else 
@@ -62,17 +59,15 @@ namespace Autabee.Utility.Messaging
 
         public override string ToString()
         {
-            if (string.IsNullOrWhiteSpace(MessageText)) {
-                 MessageText = MessageVault.GetMessage(MessageCode.MessageHash()); }
-            return string.Format(MessageText, Parameters);
+            return string.Format(Text, Parameters);
         }
-        public string ToString(CultureInfo culture)
-        {
-            if (string.IsNullOrWhiteSpace(MessageText))
-            {
-                MessageText = MessageVault.GetMessage(MessageCode.MessageHash(),culture);
-            }
-            return string.Format(MessageText, Parameters);
-        }
+        //public string ToString(CultureInfo culture)
+        //{
+        //    if (string.IsNullOrWhiteSpace(Text))
+        //    {
+        //        //MessageText = MessageVault.GetMessage(MessageCode.MessageHash(),culture);
+        //    }
+        //    return string.Format(Text, Parameters);
+        //}
     }
 }

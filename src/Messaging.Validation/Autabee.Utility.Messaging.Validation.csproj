@@ -6,7 +6,7 @@
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<Description>Simple Implementation for outputting to Serilog.</Description>
 		<PackageProjectUrl>https://github.com/Autabee/Autabee.Utility/tree/main/src/Messaging.Validation</PackageProjectUrl>
-		<PackageTags>logging</PackageTags>
+		<PackageTags>messaging</PackageTags>
 		<Version>1.0.0</Version>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
