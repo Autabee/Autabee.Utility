@@ -15,35 +15,29 @@ namespace Autabee.Utility.IEC61131StringTypeConversion
     {
         // source https://www.plcnext.help/te/Programming/Csharp/Csharp_programming/Csharp_Supported_data_types.htm
         public static string GetIecTypeString<T>(this T value)
-        {
-            Type type = value.GetType();
-            return GetIecTypeString(type);
+            => GetIecTypeString(value.GetType());
 
-        }
         public static string GetIecTypeString(this Type type)
         {
             if (type.IsArray)
             {
                 var result = GetIecTypeString(type.GetElementType()) + "[]";
-                if (string.Equals(result, "CHAR[]"))
-                {
-                    return IECType.STRING + "[]";
-                }
-                else
-                {
-                    return result;
-                }
+                //if (string.Equals(result, "CHAR[]"))
+                //{
+                //    return IECType.STRING + "[]";
+                //}
+                //else
+                //{
+                return result;
+                //}
             }
-            else if (type.GetInterfaces().Contains(typeof(IEnumerable)) 
-                && type != typeof(string) 
+            else if (type.GetInterfaces().Contains(typeof(IEnumerable))
+                && type != typeof(string)
                 && type != typeof(BitArray))
             {
                 var result = GetIecTypeString(type.GenericTypeArguments[0]) + "[]";
 
                 return result;
-
-
-
             }
             else
             {
@@ -137,11 +131,13 @@ namespace Autabee.Utility.IEC61131StringTypeConversion
                 case "DATE":
                     return typeof(DateTime);
                 case "CHAR":
+                    return typeof(byte);
+                case "WCHAR":
                     return typeof(char);
                 case "STRING":
+                    return typeof(byte[]);
+                case "WSTRING":
                     return typeof(string);
-                case "STRING[]":
-                    return typeof(char[]);
                 case "OBJECT":
                     return typeof(object);
                 default:
@@ -169,10 +165,6 @@ namespace Autabee.Utility.IEC61131StringTypeConversion
 
                             return assemby.GetType(typeName);
                         }
-                    }
-                    if (typeString.StartsWith("STRING["))
-                    {
-                        return typeof(char[]);
                     }
                     else
                     {

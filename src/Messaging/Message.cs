@@ -5,29 +5,45 @@ using System.Runtime.Serialization;
 
 namespace Autabee.Utility.Messaging
 {
-#if NET5_0_OR_GREATER
-    public record Message
-#else
-    public class Message
-#endif
+
+    public struct Message
     {
         public Message()
         {
 
         }
-
+        
         public Message(MessageLevel level = MessageLevel.None, string text = "", params object[] parameters)
         {
+            this.Exception = null;
             Text = text ?? string.Empty;
             Level = level;
             Time = DateTime.UtcNow;
             Parameters = parameters.Select(o => o.ToString()).ToArray();
         }
 
-        public string Text
+        public Message(MessageLevel level = MessageLevel.None, Exception exception = null, string text = "", params object[] parameters)
+        {
+            this.Exception = exception;
+            Text = text ?? string.Empty;
+            Level = level;
+            Time = DateTime.UtcNow;
+            Parameters = parameters.Select(o => o.ToString()).ToArray();
+        }
+
+        public override string ToString()
+        {
+            return string.Format(Text, Parameters);
+        }
+
+        public Exception Exception
         {
             get;
+#if NET5_0_OR_GREATER
+            init;
+#else
             private set;
+#endif
         }
         public MessageLevel Level
         {
@@ -47,6 +63,16 @@ namespace Autabee.Utility.Messaging
             private set;
 #endif
         }
+
+        public string Text
+        {
+            get;
+#if NET5_0_OR_GREATER
+            init;
+#else
+            private set;
+#endif
+        }
         public DateTime Time
         {
             get;
@@ -55,11 +81,6 @@ namespace Autabee.Utility.Messaging
 #else 
             private set;
 #endif
-        }
-
-        public override string ToString()
-        {
-            return string.Format(Text, Parameters);
         }
         //public string ToString(CultureInfo culture)
         //{

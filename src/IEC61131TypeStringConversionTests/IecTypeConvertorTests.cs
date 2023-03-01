@@ -42,7 +42,7 @@ namespace Autabee.Utility.IEC61131StringTypeConversionTests
         [Fact()]
         public void GetIecByteArrayTest()
         {
-            Assert.Equal("STRING[]", IecTypeConvertor.GetIecTypeString(new char[3]));
+            Assert.Equal("CHAR[]", IecTypeConvertor.GetIecTypeString(new char[3]));
 
         }
 

@@ -1,70 +1,97 @@
 ﻿using Autabee.Utility.Messaging;
 using Serilog;
+using Serilog.Core;
 using Serilog.Events;
 using System;
 
-namespace Autabee.Utility.Logger.Serilog
+namespace Autabee.Utility.Logger
 {
-    public class AutabeeSerilogLogger : IAutabeeLogger
+    public static class AutabeeSerilogLoggerExtension
     {
-        public readonly ILogger logger;
-
-        public AutabeeSerilogLogger(ILogger logger)
+        static public LogEventLevel MessageEventLevel(Message msg)
         {
-            this.logger = logger;
+            return MessageLevelToLogEventLevel(msg.Level);
         }
-
-        public void Error(string message, params object[] values)
-            => logger.Error(message, values);
-
-        public void Error(string message, Exception e, params object[] values)
-            => logger.Error(e, message, values);
-
-        public void Fatal(string message, params object[] values)
-            => logger.Fatal(message, values);
-
-        public void Fatal(string message, Exception e, params object[] values)
-            => logger.Fatal(e, message, values);
-
-        public void Information(string message, params object[] values)
-            => logger.Information(message, values);
-
-        public void Information(string message, Exception e, params object[] values)
-            => logger.Information(e, message, values);
-
-
-        LogEventLevel MessageLevelToLogEventLevel(MessageLevel level)
+        static public LogEventLevel MessageLevelToLogEventLevel(MessageLevel level)
         {
             switch (level)
             {
-                case MessageLevel.Debug:
-                    return LogEventLevel.Debug;
-                case MessageLevel.Error:
-                    return LogEventLevel.Error;
                 case MessageLevel.Fatal:
                     return LogEventLevel.Fatal;
-                case MessageLevel.Info:
-                    return LogEventLevel.Information;
+                case MessageLevel.Error:
+                    return LogEventLevel.Error;
                 case MessageLevel.Warning:
                     return LogEventLevel.Warning;
+                case MessageLevel.Info:
+                    return LogEventLevel.Information;
+                case MessageLevel.Debug:
+                    return LogEventLevel.Debug;
                 default:
                     return LogEventLevel.Verbose;
             }
         }
-        public void Log(Message message)
+        public static void Log(this Serilog.Core.Logger logger, Message message)
         {
-            logger.Write(MessageLevelToLogEventLevel(message.Level), message.ToString());
-        }
+            if (message.Exception == null)
+            {
+                logger.Write(MessageLevelToLogEventLevel(message.Level), message.ToString());
+            }
+            else
+            {
 
-        public void Log(Message message, Exception e)
+                logger.Write(MessageLevelToLogEventLevel(message.Level), message.Exception, message.ToString());
+            }
+        }
+        public static void Log(this ILogger logger, Message message)
         {
-            throw new NotImplementedException();
+            if (message.Exception == null)
+            {
+                switch (MessageEventLevel(message))
+                {
+                    case LogEventLevel.Fatal:
+                        logger.Fatal(message.ToString());
+                        break;
+                    case LogEventLevel.Verbose:
+                        logger.Verbose(message.ToString());
+                        break;
+                    case LogEventLevel.Debug:
+                        logger.Debug(message.ToString());
+                        break;
+                    case LogEventLevel.Information:
+                        logger.Information(message.ToString());
+                        break;
+                    case LogEventLevel.Warning:
+                        logger.Warning(message.ToString());
+                        break;
+                    case LogEventLevel.Error:
+                        logger.Error(message.ToString());
+                        break;
+                }
+            }
+            else
+            {
+                switch (MessageEventLevel(message))
+                {
+                    case LogEventLevel.Fatal:
+                        logger.Fatal(message.Exception, message.ToString());
+                        break;
+                    case LogEventLevel.Verbose:
+                        logger.Verbose(message.Exception, message.ToString());
+                        break;
+                    case LogEventLevel.Debug:
+                        logger.Debug(message.Exception, message.ToString());
+                        break;
+                    case LogEventLevel.Information:
+                        logger.Information(message.Exception, message.ToString());
+                        break;
+                    case LogEventLevel.Warning:
+                        logger.Warning(message.Exception, message.ToString());
+                        break;
+                    case LogEventLevel.Error:
+                        logger.Error(message.Exception, message.ToString());
+                        break;
+                }
+            }
         }
-
-        public void Warning(string message, params object[] values)
-            => logger.Warning(message, values);
-        public void Warning(string message, Exception e, params object[] values)
-            => logger.Warning(e, message, values);
-
     }
 }
