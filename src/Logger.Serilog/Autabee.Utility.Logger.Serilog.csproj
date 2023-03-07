@@ -8,6 +8,7 @@
 		<PackageProjectUrl>https://github.com/Autabee/Autabee.Utility/tree/main/src/Logger.Serilog</PackageProjectUrl>
     	<PackageTags>logging</PackageTags>
 		<Version>1.0.2</Version>
+		<RootNamespace>Autabee.Utility.Logger</RootNamespace>
 	</PropertyGroup>
 	<ItemGroup>
 		<None Include="..\..\autabee.png">
